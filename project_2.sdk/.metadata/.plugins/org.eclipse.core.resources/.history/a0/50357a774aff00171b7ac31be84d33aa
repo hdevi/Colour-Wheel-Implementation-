@@ -1,0 +1,135 @@
+/*
+ * peripherals.h
+ *
+ *  Created on: 20-Jan-2018
+ *      Author: HIMAN
+ */
+#ifndef SRC_PERIPHERALS_H_
+#define SRC_PERIPHERALS_H_
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include "platform.h"
+#include "xparameters.h"
+#include "xstatus.h"
+#include "microblaze_sleep.h"
+#include "nexys4IO.h"
+#include "pmodENC.h"
+#include "PmodOLEDrgb.h"
+#include "xgpio.h"
+#include "xintc.h"
+#include "xtmrctr.h"
+
+typedef struct {
+	uint8_t red;
+	uint8_t green;
+	uint8_t blue;
+} rgb;
+
+typedef struct {
+	uint8_t hue;
+	uint8_t sat;
+	uint8_t val;
+} hsv;
+
+/************************** Variable Definitions ****************************/
+
+
+// Definitions for peripheral NEXYS4IO
+#define NX4IO_DEVICE_ID		XPAR_NEXYS4IO_0_DEVICE_ID
+#define NX4IO_BASEADDR		XPAR_NEXYS4IO_0_S00_AXI_BASEADDR
+#define NX4IO_HIGHADDR		XPAR_NEXYS4IO_0_S00_AXI_HIGHADDR
+
+// Definitions for peripheral PMODOLEDRGB
+#define RGBDSPLY_DEVICE_ID		XPAR_PMODOLEDRGB_0_DEVICE_ID
+#define RGBDSPLY_GPIO_BASEADDR	XPAR_PMODOLEDRGB_0_AXI_LITE_GPIO_BASEADDR
+#define RGBDSPLY_GPIO_HIGHADDR	XPAR_PMODOLEDRGB_0_AXI_LITE_GPIO_HIGHADD
+#define RGBDSPLY_SPI_BASEADDR	XPAR_PMODOLEDRGB_0_AXI_LITE_SPI_BASEADDR
+#define RGBDSPLY_SPI_HIGHADDR	XPAR_PMODOLEDRGB_0_AXI_LITE_SPI_HIGHADDR
+
+// Definitions for peripheral PMODENC
+#define PMODENC_DEVICE_ID		XPAR_PMODENC_0_DEVICE_ID
+#define PMODENC_BASEADDR		XPAR_PMODENC_0_S00_AXI_BASEADDR
+#define PMODENC_HIGHADDR		XPAR_PMODENC_0_S00_AXI_HIGHADDR
+
+// GPIO parameters
+#define GPIO_0_DEVICE_ID			XPAR_AXI_GPIO_0_DEVICE_ID
+#define GPIO_0_INPUT_0_CHANNEL		1
+#define GPIO_0_OUTPUT_0_CHANNEL		2
+
+#define GPIO_1_DEVICE_ID			XPAR_AXI_GPIO_1_DEVICE_ID
+#define GPIO_1_INPUT_0_CHANNEL		1
+#define GPIO_1_INPUT_1_CHANNEL		2
+#define GPIO_2_DEVICE_ID			XPAR_AXI_GPIO_2_DEVICE_ID
+#define GPIO_2_INPUT_0_CHANNEL		1
+#define GPIO_2_INPUT_1_CHANNEL		2
+#define GPIO_3_DEVICE_ID			XPAR_AXI_GPIO_3_DEVICE_ID
+#define GPIO_3_INPUT_0_CHANNEL		1
+#define GPIO_3_INPUT_1_CHANNEL		2
+#define COUNT 70000
+
+//for reducing flickering display
+ extern  int count;
+ extern  int disp;
+
+ // Value of high low count from software
+  volatile u32			final_red_high;
+  volatile u32  		final_red_low;
+  volatile u32			final_blue_high;
+  volatile u32  		final_blue_low;
+  volatile u32			final_green_high;
+  volatile u32  	    final_green_low;
+
+ //temporary high,low counts
+ volatile u32            temp_red_high;
+ volatile u32            temp_red_low;
+ volatile u32            temp_green_high;
+ volatile u32            temp_green_low;
+ volatile u32            temp_blue_high;
+ volatile u32            temp_blue_low;
+
+ //high,low count signals
+ volatile u32            red_high_count;
+ volatile u32            red_low_count;
+ volatile u32            green_high_count;
+ volatile u32            green_low_count;
+ volatile u32            blue_high_count;
+ volatile u32            blue_low_count;
+
+  volatile u32			gpio_in;				// GPIO input port
+  volatile u32			gpio1_in1;				// GPIO1 ch0 input port
+  volatile u32			gpio2_in1;				// GPIO2 ch0 input port
+  volatile u32			gpio3_in1;				// GPIO3 ch0 input port
+  volatile u32			gpio1_in2;				// GPIO1 ch1 input port
+  volatile u32			gpio2_in2;				// GPIO2 ch1 input port
+  volatile u32			gpio3_in2;				// GPIO3 ch1 input port
+
+  uint16_t RotaryCnt, OldRotaryCnt;
+  uint16_t RotaryIncr;
+  bool RotaryNoNeg;
+
+  // Microblaze peripheral instances
+  uint64_t 		timestamp;
+  PmodOLEDrgb	pmodOLEDrgb_inst;
+  PmodENC 	    pmodENC_inst;
+  XGpio			GPIOInst0;					// GPIO instance
+  XGpio			GPIOInst1;					// GPIO instance 1 - used for hardware detect
+  XGpio			GPIOInst2;					// GPIO instance 2 - used for hardware detect
+  XGpio			GPIOInst3;					// GPIO instance 3 - used for hardware detect
+
+  void PMDIO_puthex(PmodOLEDrgb* InstancePtr, uint32_t num);
+  void PMDIO_putnum(PmodOLEDrgb* InstancePtr, int32_t num, int32_t radix);
+  void PMDIO_itoa(int32_t value, char *string, int32_t radix);
+
+  int hardware_detect(void);
+  void software_detect(void);
+  void Oled_display(hsv datahsv);
+  void SevenSeg_display(uint8_t red,uint8_t green, uint8_t blue);
+  int compare_hsv( hsv prev,hsv next);
+  void initial_display();
+  void peripherals_exit();
+  void exit_display();
+  int usleep(u32 usec);
+
+#endif

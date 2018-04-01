@@ -1,0 +1,1080 @@
+01:05:48 **** Incremental Build of configuration Debug for project project_22 ****
+make all 
+make: Nothing to be done for `all'.
+01:05:54 **** Incremental Build of configuration Debug for project project_22 ****
+make all 
+make: Nothing to be done for `all'.
+01:08:09 **** Auto Build of configuration Debug for project hri ****
+make all 
+'Building file: ../src/test.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/test.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/test.d" -MT"src/test.o" -o "src/test.o" "../src/test.c"
+In file included from ../src/test.c:60:0:
+../../standalone_bsp_0/microblaze_0/include/pmodOLEDrgb.h:57:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../../standalone_bsp_0/microblaze_0/include/nexys4IO.h:29:0,
+                 from ../src/test.c:59:
+c:\xilinx\sdk\2017.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\6.2.0\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/test.c: In function 'Test':
+../src/test.c:220:10: warning: unused variable 'b_color' [-Wunused-variable]
+  uint8_t b_color;
+          ^~~~~~~
+../src/test.c:219:10: warning: unused variable 'g_color' [-Wunused-variable]
+  uint8_t g_color;
+          ^~~~~~~
+../src/test.c:218:10: warning: unused variable 'r_color' [-Wunused-variable]
+  uint8_t r_color;
+          ^~~~~~~
+'Finished building: ../src/test.c'
+' '
+'Building target: hri.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "hri.elf"  ./src/platform.o ./src/test.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: hri.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size hri.elf  |tee "hri.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  26940	    432	   3900	  31272	   7a28	hri.elf
+'Finished building: hri.elf.size'
+' '
+01:08:19 **** Incremental Build of configuration Debug for project hri ****
+make all 
+make: Nothing to be done for `all'.
+01:12:51 **** Auto Build of configuration Debug for project hri ****
+make all 
+'Building file: ../src/test.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/test.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/test.d" -MT"src/test.o" -o "src/test.o" "../src/test.c"
+In file included from ../src/test.c:60:0:
+../../standalone_bsp_0/microblaze_0/include/pmodOLEDrgb.h:57:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../../standalone_bsp_0/microblaze_0/include/nexys4IO.h:29:0,
+                 from ../src/test.c:59:
+c:\xilinx\sdk\2017.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\6.2.0\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/test.c: In function 'Test':
+../src/test.c:220:10: warning: unused variable 'b_color' [-Wunused-variable]
+  uint8_t b_color;
+          ^~~~~~~
+../src/test.c:219:10: warning: unused variable 'g_color' [-Wunused-variable]
+  uint8_t g_color;
+          ^~~~~~~
+../src/test.c:218:10: warning: unused variable 'r_color' [-Wunused-variable]
+  uint8_t r_color;
+          ^~~~~~~
+'Finished building: ../src/test.c'
+' '
+'Building target: hri.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "hri.elf"  ./src/platform.o ./src/test.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: hri.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size hri.elf  |tee "hri.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  26940	    432	   3900	  31272	   7a28	hri.elf
+'Finished building: hri.elf.size'
+' '
+01:13:09 **** Incremental Build of configuration Debug for project hri ****
+make all 
+make: Nothing to be done for `all'.
+
+**** Build of configuration Debug for project san ****
+
+Nothing to build for project san
+01:16:55 **** Auto Build of configuration Debug for project san ****
+make all 
+'Building file: ../src/platform.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: san.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "san.elf"  ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+c:/xilinx/sdk/2017.3/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/6.2.0/../../../../microblaze-xilinx-elf/lib/le/crtinit.o: In function `_crtinit':
+(.text+0x78): undefined reference to `main'
+collect2.exe: error: ld returned 1 exit status
+make: *** [san.elf] Error 1
+01:17:07 **** Auto Build of configuration Debug for project san ****
+make all 
+'Building file: ../src/san.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/san.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/san.d" -MT"src/san.o" -o "src/san.o" "../src/san.c"
+'Finished building: ../src/san.c'
+' '
+'Building target: san.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "san.elf"  ./src/platform.o ./src/san.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+c:/xilinx/sdk/2017.3/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/6.2.0/../../../../microblaze-xilinx-elf/lib/le/crtinit.o: In function `_crtinit':
+(.text+0x78): undefined reference to `main'
+collect2.exe: error: ld returned 1 exit status
+make: *** [san.elf] Error 1
+01:17:11 **** Auto Build of configuration Debug for project san ****
+make all 
+'Building file: ../src/san.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/san.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/san.d" -MT"src/san.o" -o "src/san.o" "../src/san.c"
+In file included from ../src/san.c:17:0:
+../../standalone_bsp_0/microblaze_0/include/pmodOLEDrgb.h:57:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../../standalone_bsp_0/microblaze_0/include/nexys4IO.h:29:0,
+                 from ../src/san.c:16:
+c:\xilinx\sdk\2017.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\6.2.0\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+'Finished building: ../src/san.c'
+' '
+'Building target: san.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "san.elf"  ./src/platform.o ./src/san.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: san.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size san.elf  |tee "san.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27240	    456	   3840	  31536	   7b30	san.elf
+'Finished building: san.elf.size'
+' '
+01:17:17 **** Incremental Build of configuration Debug for project san ****
+make all 
+make: Nothing to be done for `all'.
+
+**** Build of configuration Debug for project nan ****
+
+Nothing to build for project nan
+01:20:20 **** Auto Build of configuration Debug for project nan ****
+make all 
+'Building file: ../src/platform.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: nan.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "nan.elf"  ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+c:/xilinx/sdk/2017.3/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/6.2.0/../../../../microblaze-xilinx-elf/lib/le/crtinit.o: In function `_crtinit':
+(.text+0x78): undefined reference to `main'
+collect2.exe: error: ld returned 1 exit status
+make: *** [nan.elf] Error 1
+01:20:31 **** Auto Build of configuration Debug for project nan ****
+make all 
+'Building file: ../src/nan.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/nan.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/nan.d" -MT"src/nan.o" -o "src/nan.o" "../src/nan.c"
+'Finished building: ../src/nan.c'
+' '
+'Building target: nan.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "nan.elf"  ./src/nan.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+c:/xilinx/sdk/2017.3/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/6.2.0/../../../../microblaze-xilinx-elf/lib/le/crtinit.o: In function `_crtinit':
+(.text+0x78): undefined reference to `main'
+collect2.exe: error: ld returned 1 exit status
+make: *** [nan.elf] Error 1
+01:20:35 **** Auto Build of configuration Debug for project nan ****
+make all 
+'Building file: ../src/nan.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/nan.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/nan.d" -MT"src/nan.o" -o "src/nan.o" "../src/nan.c"
+In file included from ../src/nan.c:50:0:
+../../standalone_bsp_0/microblaze_0/include/pmodOLEDrgb.h:57:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../../standalone_bsp_0/microblaze_0/include/nexys4IO.h:29:0,
+                 from ../src/nan.c:49:
+c:\xilinx\sdk\2017.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\6.2.0\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/nan.c: In function 'PWM_Generation_Detection':
+../src/nan.c:207:22: warning: variable 'OldRotaryCnt' set but not used [-Wunused-but-set-variable]
+  uint16_t RotaryCnt, OldRotaryCnt;
+                      ^~~~~~~~~~~~
+'Finished building: ../src/nan.c'
+' '
+'Building target: nan.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "nan.elf"  ./src/nan.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: nan.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size nan.elf  |tee "nan.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27128	    432	   3872	  31432	   7ac8	nan.elf
+'Finished building: nan.elf.size'
+' '
+01:20:42 **** Incremental Build of configuration Debug for project nan ****
+make all 
+make: Nothing to be done for `all'.
+01:46:10 **** Incremental Build of configuration Debug for project project_22 ****
+make all 
+make: Nothing to be done for `all'.
+01:54:24 **** Auto Build of configuration Debug for project project_22 ****
+make all 
+'Building file: ../src/peripherals.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/peripherals.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/peripherals.d" -MT"src/peripherals.o" -o "src/peripherals.o" "../src/peripherals.c"
+In file included from ../src/peripherals.h:19:0,
+                 from ../src/peripherals.c:15:
+../../standalone_bsp_0/microblaze_0/include/PmodOLEDrgb.h:57:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../../standalone_bsp_0/microblaze_0/include/nexys4IO.h:29:0,
+                 from ../src/peripherals.h:17,
+                 from ../src/peripherals.c:15:
+c:\xilinx\sdk\2017.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\6.2.0\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/peripherals.c: In function 'usleep':
+../src/peripherals.c:495:2: warning: 'return' with no value, in function returning non-void
+  return;
+  ^~~~~~
+../src/peripherals.c:487:5: note: declared here
+ int usleep(u32 usec)
+     ^~~~~~
+../src/peripherals.c: In function 'hardware_detect':
+../src/peripherals.c:44:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/peripherals.c'
+' '
+'Building target: project_22.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project_22.elf"  ./src/main.o ./src/peripherals.o ./src/platform.o ./src/timer_int.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: project_22.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size project_22.elf  |tee "project_22.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29464	    436	   2876	  32776	   8008	project_22.elf
+'Finished building: project_22.elf.size'
+' '
+01:55:49 **** Auto Build of configuration Debug for project project_22 ****
+make all 
+'Building file: ../src/timer_int.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/timer_int.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/timer_int.d" -MT"src/timer_int.o" -o "src/timer_int.o" "../src/timer_int.c"
+In file included from ../src/peripherals.h:19:0,
+                 from ../src/timer_int.c:16:
+../../standalone_bsp_0/microblaze_0/include/PmodOLEDrgb.h:57:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../../standalone_bsp_0/microblaze_0/include/nexys4IO.h:29:0,
+                 from ../src/timer_int.h:18,
+                 from ../src/timer_int.c:15:
+c:\xilinx\sdk\2017.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\6.2.0\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+'Finished building: ../src/timer_int.c'
+' '
+'Building target: project_22.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project_22.elf"  ./src/main.o ./src/peripherals.o ./src/platform.o ./src/timer_int.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: project_22.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size project_22.elf  |tee "project_22.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29396	    436	   2872	  32704	   7fc0	project_22.elf
+'Finished building: project_22.elf.size'
+' '
+02:03:35 **** Auto Build of configuration Debug for project project_22 ****
+make all 
+'Building file: ../src/peripherals.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/peripherals.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/peripherals.d" -MT"src/peripherals.o" -o "src/peripherals.o" "../src/peripherals.c"
+In file included from ../src/peripherals.h:19:0,
+                 from ../src/peripherals.c:15:
+../../standalone_bsp_0/microblaze_0/include/PmodOLEDrgb.h:57:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../../standalone_bsp_0/microblaze_0/include/nexys4IO.h:29:0,
+                 from ../src/peripherals.h:17,
+                 from ../src/peripherals.c:15:
+c:\xilinx\sdk\2017.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\6.2.0\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/peripherals.c: In function 'compare_hsv':
+../src/peripherals.c:337:2: error: too few arguments to function 'Oled_display'
+  Oled_display();
+  ^~~~~~~~~~~~
+../src/peripherals.c:69:6: note: declared here
+ void Oled_display(hsv_t datahsv)
+      ^~~~~~~~~~~~
+../src/peripherals.c: In function 'usleep':
+../src/peripherals.c:510:2: warning: 'return' with no value, in function returning non-void
+  return;
+  ^~~~~~
+../src/peripherals.c:502:5: note: declared here
+ int usleep(u32 usec)
+     ^~~~~~
+../src/peripherals.c: In function 'hardware_detect':
+../src/peripherals.c:44:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/peripherals.o] Error 1
+02:04:49 **** Auto Build of configuration Debug for project project_22 ****
+make all 
+'Building file: ../src/peripherals.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/peripherals.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/peripherals.d" -MT"src/peripherals.o" -o "src/peripherals.o" "../src/peripherals.c"
+In file included from ../src/peripherals.h:19:0,
+                 from ../src/peripherals.c:15:
+../../standalone_bsp_0/microblaze_0/include/PmodOLEDrgb.h:57:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../../standalone_bsp_0/microblaze_0/include/nexys4IO.h:29:0,
+                 from ../src/peripherals.h:17,
+                 from ../src/peripherals.c:15:
+c:\xilinx\sdk\2017.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\6.2.0\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/peripherals.c: In function 'usleep':
+../src/peripherals.c:510:2: warning: 'return' with no value, in function returning non-void
+  return;
+  ^~~~~~
+../src/peripherals.c:502:5: note: declared here
+ int usleep(u32 usec)
+     ^~~~~~
+../src/peripherals.c: In function 'hardware_detect':
+../src/peripherals.c:44:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/peripherals.c'
+' '
+'Building target: project_22.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project_22.elf"  ./src/main.o ./src/peripherals.o ./src/platform.o ./src/timer_int.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: project_22.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size project_22.elf  |tee "project_22.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29680	    436	   2868	  32984	   80d8	project_22.elf
+'Finished building: project_22.elf.size'
+' '
+02:04:59 **** Incremental Build of configuration Debug for project project_22 ****
+make all 
+make: Nothing to be done for `all'.
+02:06:41 **** Auto Build of configuration Debug for project project_22 ****
+make all 
+'Building file: ../src/peripherals.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/peripherals.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/peripherals.d" -MT"src/peripherals.o" -o "src/peripherals.o" "../src/peripherals.c"
+In file included from ../src/peripherals.h:19:0,
+                 from ../src/peripherals.c:15:
+../../standalone_bsp_0/microblaze_0/include/PmodOLEDrgb.h:57:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../../standalone_bsp_0/microblaze_0/include/nexys4IO.h:29:0,
+                 from ../src/peripherals.h:17,
+                 from ../src/peripherals.c:15:
+c:\xilinx\sdk\2017.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\6.2.0\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/peripherals.c: In function 'usleep':
+../src/peripherals.c:517:2: warning: 'return' with no value, in function returning non-void
+  return;
+  ^~~~~~
+../src/peripherals.c:509:5: note: declared here
+ int usleep(u32 usec)
+     ^~~~~~
+../src/peripherals.c: In function 'hardware_detect':
+../src/peripherals.c:44:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/peripherals.c'
+' '
+'Building target: project_22.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project_22.elf"  ./src/main.o ./src/peripherals.o ./src/platform.o ./src/timer_int.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: project_22.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size project_22.elf  |tee "project_22.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29848	    436	   2868	  33152	   8180	project_22.elf
+'Finished building: project_22.elf.size'
+' '
+02:06:47 **** Incremental Build of configuration Debug for project project_22 ****
+make all 
+make: Nothing to be done for `all'.
+02:08:11 **** Auto Build of configuration Debug for project project_22 ****
+make all 
+'Building file: ../src/peripherals.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/peripherals.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/peripherals.d" -MT"src/peripherals.o" -o "src/peripherals.o" "../src/peripherals.c"
+In file included from ../src/peripherals.h:19:0,
+                 from ../src/peripherals.c:15:
+../../standalone_bsp_0/microblaze_0/include/PmodOLEDrgb.h:57:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../../standalone_bsp_0/microblaze_0/include/nexys4IO.h:29:0,
+                 from ../src/peripherals.h:17,
+                 from ../src/peripherals.c:15:
+c:\xilinx\sdk\2017.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\6.2.0\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/peripherals.c: In function 'usleep':
+../src/peripherals.c:504:2: warning: 'return' with no value, in function returning non-void
+  return;
+  ^~~~~~
+../src/peripherals.c:496:5: note: declared here
+ int usleep(u32 usec)
+     ^~~~~~
+../src/peripherals.c: In function 'hardware_detect':
+../src/peripherals.c:44:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/peripherals.c'
+' '
+'Building target: project_22.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project_22.elf"  ./src/main.o ./src/peripherals.o ./src/platform.o ./src/timer_int.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: project_22.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size project_22.elf  |tee "project_22.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29612	    436	   2872	  32920	   8098	project_22.elf
+'Finished building: project_22.elf.size'
+' '
+02:08:23 **** Auto Build of configuration Debug for project project_22 ****
+make all 
+'Building file: ../src/peripherals.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/peripherals.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/peripherals.d" -MT"src/peripherals.o" -o "src/peripherals.o" "../src/peripherals.c"
+In file included from ../src/peripherals.h:19:0,
+                 from ../src/peripherals.c:15:
+../../standalone_bsp_0/microblaze_0/include/PmodOLEDrgb.h:57:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../../standalone_bsp_0/microblaze_0/include/nexys4IO.h:29:0,
+                 from ../src/peripherals.h:17,
+                 from ../src/peripherals.c:15:
+c:\xilinx\sdk\2017.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\6.2.0\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/peripherals.c: In function 'usleep':
+../src/peripherals.c:502:2: warning: 'return' with no value, in function returning non-void
+  return;
+  ^~~~~~
+../src/peripherals.c:494:5: note: declared here
+ int usleep(u32 usec)
+     ^~~~~~
+../src/peripherals.c: In function 'hardware_detect':
+../src/peripherals.c:44:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/peripherals.c'
+' '
+'Building target: project_22.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project_22.elf"  ./src/main.o ./src/peripherals.o ./src/platform.o ./src/timer_int.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: project_22.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size project_22.elf  |tee "project_22.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29584	    436	   2868	  32888	   8078	project_22.elf
+'Finished building: project_22.elf.size'
+' '
+02:08:32 **** Incremental Build of configuration Debug for project project_22 ****
+make all 
+make: Nothing to be done for `all'.
+02:09:12 **** Auto Build of configuration Debug for project project_22 ****
+make all 
+'Building file: ../src/peripherals.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/peripherals.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/peripherals.d" -MT"src/peripherals.o" -o "src/peripherals.o" "../src/peripherals.c"
+In file included from ../src/peripherals.h:19:0,
+                 from ../src/peripherals.c:15:
+../../standalone_bsp_0/microblaze_0/include/PmodOLEDrgb.h:57:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../../standalone_bsp_0/microblaze_0/include/nexys4IO.h:29:0,
+                 from ../src/peripherals.h:17,
+                 from ../src/peripherals.c:15:
+c:\xilinx\sdk\2017.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\6.2.0\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/peripherals.c: In function 'usleep':
+../src/peripherals.c:495:2: warning: 'return' with no value, in function returning non-void
+  return;
+  ^~~~~~
+../src/peripherals.c:487:5: note: declared here
+ int usleep(u32 usec)
+     ^~~~~~
+../src/peripherals.c: In function 'hardware_detect':
+../src/peripherals.c:44:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/peripherals.c'
+' '
+'Building target: project_22.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project_22.elf"  ./src/main.o ./src/peripherals.o ./src/platform.o ./src/timer_int.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: project_22.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size project_22.elf  |tee "project_22.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29396	    436	   2872	  32704	   7fc0	project_22.elf
+'Finished building: project_22.elf.size'
+' '
+02:09:17 **** Incremental Build of configuration Debug for project project_22 ****
+make all 
+make: Nothing to be done for `all'.
+02:09:56 **** Auto Build of configuration Debug for project project_22 ****
+make all 
+'Building file: ../src/peripherals.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/peripherals.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/peripherals.d" -MT"src/peripherals.o" -o "src/peripherals.o" "../src/peripherals.c"
+In file included from ../src/peripherals.h:19:0,
+                 from ../src/peripherals.c:15:
+../../standalone_bsp_0/microblaze_0/include/PmodOLEDrgb.h:57:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../../standalone_bsp_0/microblaze_0/include/nexys4IO.h:29:0,
+                 from ../src/peripherals.h:17,
+                 from ../src/peripherals.c:15:
+c:\xilinx\sdk\2017.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\6.2.0\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/peripherals.c: In function 'usleep':
+../src/peripherals.c:495:2: warning: 'return' with no value, in function returning non-void
+  return;
+  ^~~~~~
+../src/peripherals.c:487:5: note: declared here
+ int usleep(u32 usec)
+     ^~~~~~
+../src/peripherals.c: In function 'hardware_detect':
+../src/peripherals.c:44:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/peripherals.c'
+' '
+'Building target: project_22.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project_22.elf"  ./src/main.o ./src/peripherals.o ./src/platform.o ./src/timer_int.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: project_22.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size project_22.elf  |tee "project_22.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29396	    436	   2872	  32704	   7fc0	project_22.elf
+'Finished building: project_22.elf.size'
+' '
+02:10:03 **** Incremental Build of configuration Debug for project project_22 ****
+make all 
+make: Nothing to be done for `all'.
+04:33:39 **** Incremental Build of configuration Debug for project project_22 ****
+make all 
+make: Nothing to be done for `all'.
+04:34:26 **** Auto Build of configuration Debug for project project_22 ****
+make all 
+'Building file: ../src/timer_int.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/timer_int.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/timer_int.d" -MT"src/timer_int.o" -o "src/timer_int.o" "../src/timer_int.c"
+In file included from ../src/peripherals.h:19:0,
+                 from ../src/timer_int.c:16:
+../../standalone_bsp_0/microblaze_0/include/PmodOLEDrgb.h:57:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../../standalone_bsp_0/microblaze_0/include/nexys4IO.h:29:0,
+                 from ../src/timer_int.h:18,
+                 from ../src/timer_int.c:15:
+c:\xilinx\sdk\2017.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\6.2.0\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+'Finished building: ../src/timer_int.c'
+' '
+'Building target: project_22.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project_22.elf"  ./src/main.o ./src/peripherals.o ./src/platform.o ./src/timer_int.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: project_22.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size project_22.elf  |tee "project_22.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29396	    436	   2872	  32704	   7fc0	project_22.elf
+'Finished building: project_22.elf.size'
+' '
+04:34:32 **** Incremental Build of configuration Debug for project project_22 ****
+make all 
+make: Nothing to be done for `all'.
+04:40:24 **** Auto Build of configuration Debug for project project_22 ****
+make all 
+'Building file: ../src/peripherals.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/peripherals.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/peripherals.d" -MT"src/peripherals.o" -o "src/peripherals.o" "../src/peripherals.c"
+In file included from ../src/peripherals.h:19:0,
+                 from ../src/peripherals.c:15:
+../../standalone_bsp_0/microblaze_0/include/PmodOLEDrgb.h:57:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../../standalone_bsp_0/microblaze_0/include/nexys4IO.h:29:0,
+                 from ../src/peripherals.h:17,
+                 from ../src/peripherals.c:15:
+c:\xilinx\sdk\2017.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\6.2.0\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/peripherals.c: In function 'usleep':
+../src/peripherals.c:495:2: warning: 'return' with no value, in function returning non-void
+  return;
+  ^~~~~~
+../src/peripherals.c:487:5: note: declared here
+ int usleep(u32 usec)
+     ^~~~~~
+../src/peripherals.c: In function 'hardware_detect':
+../src/peripherals.c:44:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/peripherals.c'
+' '
+'Building target: project_22.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project_22.elf"  ./src/main.o ./src/peripherals.o ./src/platform.o ./src/timer_int.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: project_22.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size project_22.elf  |tee "project_22.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29396	    436	   2872	  32704	   7fc0	project_22.elf
+'Finished building: project_22.elf.size'
+' '
+04:40:41 **** Auto Build of configuration Debug for project project_22 ****
+make all 
+'Building file: ../src/peripherals.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/peripherals.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/peripherals.d" -MT"src/peripherals.o" -o "src/peripherals.o" "../src/peripherals.c"
+In file included from ../src/peripherals.h:19:0,
+                 from ../src/peripherals.c:15:
+../../standalone_bsp_0/microblaze_0/include/PmodOLEDrgb.h:57:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../../standalone_bsp_0/microblaze_0/include/nexys4IO.h:29:0,
+                 from ../src/peripherals.h:17,
+                 from ../src/peripherals.c:15:
+c:\xilinx\sdk\2017.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\6.2.0\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/peripherals.c: In function 'usleep':
+../src/peripherals.c:495:2: warning: 'return' with no value, in function returning non-void
+  return;
+  ^~~~~~
+../src/peripherals.c:487:5: note: declared here
+ int usleep(u32 usec)
+     ^~~~~~
+../src/peripherals.c: In function 'hardware_detect':
+../src/peripherals.c:44:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/peripherals.c'
+' '
+'Building target: project_22.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project_22.elf"  ./src/main.o ./src/peripherals.o ./src/platform.o ./src/timer_int.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: project_22.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size project_22.elf  |tee "project_22.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29396	    436	   2872	  32704	   7fc0	project_22.elf
+'Finished building: project_22.elf.size'
+' '
+04:41:17 **** Auto Build of configuration Debug for project project_22 ****
+make all 
+'Building file: ../src/peripherals.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/peripherals.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/peripherals.d" -MT"src/peripherals.o" -o "src/peripherals.o" "../src/peripherals.c"
+In file included from ../src/peripherals.h:19:0,
+                 from ../src/peripherals.c:15:
+../../standalone_bsp_0/microblaze_0/include/PmodOLEDrgb.h:57:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../../standalone_bsp_0/microblaze_0/include/nexys4IO.h:29:0,
+                 from ../src/peripherals.h:17,
+                 from ../src/peripherals.c:15:
+c:\xilinx\sdk\2017.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\6.2.0\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/peripherals.c: In function 'usleep':
+../src/peripherals.c:497:2: warning: 'return' with no value, in function returning non-void
+  return;
+  ^~~~~~
+../src/peripherals.c:489:5: note: declared here
+ int usleep(u32 usec)
+     ^~~~~~
+'Finished building: ../src/peripherals.c'
+' '
+'Building target: project_22.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project_22.elf"  ./src/main.o ./src/peripherals.o ./src/platform.o ./src/timer_int.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: project_22.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size project_22.elf  |tee "project_22.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29396	    436	   2872	  32704	   7fc0	project_22.elf
+'Finished building: project_22.elf.size'
+' '
+04:48:33 **** Incremental Build of configuration Debug for project project_22 ****
+make all 
+make: Nothing to be done for `all'.
+10:39:37 **** Auto Build of configuration Debug for project project_22 ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: project_22.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project_22.elf"  ./src/main.o ./src/peripherals.o ./src/platform.o ./src/timer_int.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: project_22.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size project_22.elf  |tee "project_22.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29396	    436	   2872	  32704	   7fc0	project_22.elf
+'Finished building: project_22.elf.size'
+' '
+10:42:14 **** Auto Build of configuration Debug for project project_22 ****
+make all 
+'Building file: ../src/peripherals.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/peripherals.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/peripherals.d" -MT"src/peripherals.o" -o "src/peripherals.o" "../src/peripherals.c"
+In file included from ../src/peripherals.h:19:0,
+                 from ../src/peripherals.c:15:
+../../standalone_bsp_0/microblaze_0/include/PmodOLEDrgb.h:57:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../../standalone_bsp_0/microblaze_0/include/nexys4IO.h:29:0,
+                 from ../src/peripherals.h:17,
+                 from ../src/peripherals.c:15:
+c:\xilinx\sdk\2017.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\6.2.0\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/peripherals.c: In function 'usleep':
+../src/peripherals.c:494:2: warning: 'return' with no value, in function returning non-void
+  return;
+  ^~~~~~
+../src/peripherals.c:486:5: note: declared here
+ int usleep(u32 usec)
+     ^~~~~~
+'Finished building: ../src/peripherals.c'
+' '
+'Building target: project_22.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project_22.elf"  ./src/main.o ./src/peripherals.o ./src/platform.o ./src/timer_int.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: project_22.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size project_22.elf  |tee "project_22.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29396	    436	   2872	  32704	   7fc0	project_22.elf
+'Finished building: project_22.elf.size'
+' '
+10:42:22 **** Auto Build of configuration Debug for project project_22 ****
+make all 
+'Building file: ../src/peripherals.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/peripherals.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/peripherals.d" -MT"src/peripherals.o" -o "src/peripherals.o" "../src/peripherals.c"
+In file included from ../src/peripherals.h:19:0,
+                 from ../src/peripherals.c:15:
+../../standalone_bsp_0/microblaze_0/include/PmodOLEDrgb.h:57:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../../standalone_bsp_0/microblaze_0/include/nexys4IO.h:29:0,
+                 from ../src/peripherals.h:17,
+                 from ../src/peripherals.c:15:
+c:\xilinx\sdk\2017.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\6.2.0\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/peripherals.c: In function 'usleep':
+../src/peripherals.c:493:2: warning: 'return' with no value, in function returning non-void
+  return;
+  ^~~~~~
+../src/peripherals.c:485:5: note: declared here
+ int usleep(u32 usec)
+     ^~~~~~
+'Finished building: ../src/peripherals.c'
+' '
+'Building target: project_22.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project_22.elf"  ./src/main.o ./src/peripherals.o ./src/platform.o ./src/timer_int.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: project_22.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size project_22.elf  |tee "project_22.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29396	    436	   2872	  32704	   7fc0	project_22.elf
+'Finished building: project_22.elf.size'
+' '
+10:42:35 **** Auto Build of configuration Debug for project project_22 ****
+make all 
+'Building file: ../src/peripherals.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/peripherals.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/peripherals.d" -MT"src/peripherals.o" -o "src/peripherals.o" "../src/peripherals.c"
+In file included from ../src/peripherals.h:19:0,
+                 from ../src/peripherals.c:15:
+../../standalone_bsp_0/microblaze_0/include/PmodOLEDrgb.h:57:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../../standalone_bsp_0/microblaze_0/include/nexys4IO.h:29:0,
+                 from ../src/peripherals.h:17,
+                 from ../src/peripherals.c:15:
+c:\xilinx\sdk\2017.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\6.2.0\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/peripherals.c: In function 'usleep':
+../src/peripherals.c:491:2: warning: 'return' with no value, in function returning non-void
+  return;
+  ^~~~~~
+../src/peripherals.c:483:5: note: declared here
+ int usleep(u32 usec)
+     ^~~~~~
+'Finished building: ../src/peripherals.c'
+' '
+'Building target: project_22.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project_22.elf"  ./src/main.o ./src/peripherals.o ./src/platform.o ./src/timer_int.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: project_22.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size project_22.elf  |tee "project_22.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29396	    436	   2872	  32704	   7fc0	project_22.elf
+'Finished building: project_22.elf.size'
+' '
+10:45:44 **** Auto Build of configuration Debug for project project_22 ****
+make all 
+'Building file: ../src/peripherals.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/peripherals.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/peripherals.d" -MT"src/peripherals.o" -o "src/peripherals.o" "../src/peripherals.c"
+In file included from ../src/peripherals.h:19:0,
+                 from ../src/peripherals.c:15:
+../../standalone_bsp_0/microblaze_0/include/PmodOLEDrgb.h:57:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../../standalone_bsp_0/microblaze_0/include/nexys4IO.h:29:0,
+                 from ../src/peripherals.h:17,
+                 from ../src/peripherals.c:15:
+c:\xilinx\sdk\2017.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\6.2.0\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/peripherals.c: In function 'usleep':
+../src/peripherals.c:478:2: warning: 'return' with no value, in function returning non-void
+  return;
+  ^~~~~~
+../src/peripherals.c:470:5: note: declared here
+ int usleep(u32 usec)
+     ^~~~~~
+'Finished building: ../src/peripherals.c'
+' '
+'Building target: project_22.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project_22.elf"  ./src/main.o ./src/peripherals.o ./src/platform.o ./src/timer_int.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: project_22.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size project_22.elf  |tee "project_22.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29264	    436	   2868	  32568	   7f38	project_22.elf
+'Finished building: project_22.elf.size'
+' '
+10:47:11 **** Auto Build of configuration Debug for project project_22 ****
+make all 
+'Building file: ../src/timer_int.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/timer_int.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/timer_int.d" -MT"src/timer_int.o" -o "src/timer_int.o" "../src/timer_int.c"
+In file included from ../src/peripherals.h:19:0,
+                 from ../src/timer_int.c:16:
+../../standalone_bsp_0/microblaze_0/include/PmodOLEDrgb.h:57:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../../standalone_bsp_0/microblaze_0/include/nexys4IO.h:29:0,
+                 from ../src/timer_int.h:18,
+                 from ../src/timer_int.c:15:
+c:\xilinx\sdk\2017.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\6.2.0\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+'Finished building: ../src/timer_int.c'
+' '
+'Building target: project_22.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project_22.elf"  ./src/main.o ./src/peripherals.o ./src/platform.o ./src/timer_int.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: project_22.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size project_22.elf  |tee "project_22.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29372	    436	   2872	  32680	   7fa8	project_22.elf
+'Finished building: project_22.elf.size'
+' '
+10:48:17 **** Auto Build of configuration Debug for project project_22 ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/timer_int.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/timer_int.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/timer_int.d" -MT"src/timer_int.o" -o "src/timer_int.o" "../src/timer_int.c"
+In file included from ../src/peripherals.h:19:0,
+                 from ../src/timer_int.c:16:
+../../standalone_bsp_0/microblaze_0/include/PmodOLEDrgb.h:57:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../../standalone_bsp_0/microblaze_0/include/nexys4IO.h:29:0,
+                 from ../src/timer_int.h:18,
+                 from ../src/timer_int.c:15:
+c:\xilinx\sdk\2017.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\6.2.0\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+'Finished building: ../src/timer_int.c'
+' '
+'Building target: project_22.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project_22.elf"  ./src/main.o ./src/peripherals.o ./src/platform.o ./src/timer_int.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: project_22.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size project_22.elf  |tee "project_22.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29372	    436	   2872	  32680	   7fa8	project_22.elf
+'Finished building: project_22.elf.size'
+' '
+10:48:49 **** Auto Build of configuration Debug for project project_22 ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/timer_int.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/timer_int.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/timer_int.d" -MT"src/timer_int.o" -o "src/timer_int.o" "../src/timer_int.c"
+In file included from ../src/peripherals.h:19:0,
+                 from ../src/timer_int.c:16:
+../../standalone_bsp_0/microblaze_0/include/PmodOLEDrgb.h:57:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../../standalone_bsp_0/microblaze_0/include/nexys4IO.h:29:0,
+                 from ../src/timer_int.h:18,
+                 from ../src/timer_int.c:15:
+c:\xilinx\sdk\2017.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\6.2.0\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+'Finished building: ../src/timer_int.c'
+' '
+'Building target: project_22.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project_22.elf"  ./src/main.o ./src/peripherals.o ./src/platform.o ./src/timer_int.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: project_22.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size project_22.elf  |tee "project_22.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29372	    436	   2872	  32680	   7fa8	project_22.elf
+'Finished building: project_22.elf.size'
+' '
+10:49:38 **** Auto Build of configuration Debug for project project_22 ****
+make all 
+'Building file: ../src/peripherals.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/peripherals.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/peripherals.d" -MT"src/peripherals.o" -o "src/peripherals.o" "../src/peripherals.c"
+In file included from ../src/peripherals.h:19:0,
+                 from ../src/peripherals.c:15:
+../../standalone_bsp_0/microblaze_0/include/PmodOLEDrgb.h:57:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../../standalone_bsp_0/microblaze_0/include/nexys4IO.h:29:0,
+                 from ../src/peripherals.h:17,
+                 from ../src/peripherals.c:15:
+c:\xilinx\sdk\2017.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\6.2.0\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/peripherals.c: In function 'usleep':
+../src/peripherals.c:478:2: warning: 'return' with no value, in function returning non-void
+  return;
+  ^~~~~~
+../src/peripherals.c:470:5: note: declared here
+ int usleep(u32 usec)
+     ^~~~~~
+'Finished building: ../src/peripherals.c'
+' '
+'Building file: ../src/timer_int.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/timer_int.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/timer_int.d" -MT"src/timer_int.o" -o "src/timer_int.o" "../src/timer_int.c"
+In file included from ../src/peripherals.h:19:0,
+                 from ../src/timer_int.c:16:
+../../standalone_bsp_0/microblaze_0/include/PmodOLEDrgb.h:57:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../../standalone_bsp_0/microblaze_0/include/nexys4IO.h:29:0,
+                 from ../src/timer_int.h:18,
+                 from ../src/timer_int.c:15:
+c:\xilinx\sdk\2017.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\6.2.0\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+'Finished building: ../src/timer_int.c'
+' '
+'Building target: project_22.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project_22.elf"  ./src/main.o ./src/peripherals.o ./src/platform.o ./src/timer_int.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: project_22.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size project_22.elf  |tee "project_22.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29372	    436	   2872	  32680	   7fa8	project_22.elf
+'Finished building: project_22.elf.size'
+' '
+10:50:13 **** Auto Build of configuration Debug for project project_22 ****
+make all 
+'Building file: ../src/peripherals.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/peripherals.o" -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/peripherals.d" -MT"src/peripherals.o" -o "src/peripherals.o" "../src/peripherals.c"
+In file included from ../src/peripherals.h:19:0,
+                 from ../src/peripherals.c:15:
+../../standalone_bsp_0/microblaze_0/include/PmodOLEDrgb.h:57:0: warning: "bool" redefined
+ #define bool u8
+ 
+In file included from ../../standalone_bsp_0/microblaze_0/include/nexys4IO.h:29:0,
+                 from ../src/peripherals.h:17,
+                 from ../src/peripherals.c:15:
+c:\xilinx\sdk\2017.3\gnu\microblaze\nt\lib\gcc\microblaze-xilinx-elf\6.2.0\include\stdbool.h:33:0: note: this is the location of the previous definition
+ #define bool _Bool
+ 
+../src/peripherals.c: In function 'usleep':
+../src/peripherals.c:479:2: warning: 'return' with no value, in function returning non-void
+  return;
+  ^~~~~~
+../src/peripherals.c:471:5: note: declared here
+ int usleep(u32 usec)
+     ^~~~~~
+'Finished building: ../src/peripherals.c'
+' '
+'Building target: project_22.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project_22.elf"  ./src/main.o ./src/peripherals.o ./src/platform.o ./src/timer_int.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: project_22.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size project_22.elf  |tee "project_22.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29372	    436	   2872	  32680	   7fa8	project_22.elf
+'Finished building: project_22.elf.size'
+' '
+00:44:12 **** Auto Build of configuration Debug for project project_22 ****
+make all 
+make: Nothing to be done for `all'.

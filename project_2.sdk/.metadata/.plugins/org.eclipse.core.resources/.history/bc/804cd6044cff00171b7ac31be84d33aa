@@ -1,0 +1,398 @@
+/*
+ * timers.c
+ *
+ *  Created on: 20-Jan-2018
+ *      Author: HIMAN
+ */
+
+#include "timer_int.h"
+#include "peripherals.h"
+
+int disp = 0;
+int count = 0;
+uint64_t 	timestamp = 0L;
+
+volatile u32			sw_high_red=0;
+ volatile u32  			sw_low_red=0;
+ volatile u32			sw_high_blue=0;
+ volatile u32  			sw_low_blue=0;
+ volatile u32			sw_high_green=0;
+ volatile u32  			sw_low_green=0;
+
+ //temporary high,low counts
+ volatile u32            Red_high=0;
+ volatile u32            Red_low=0;
+ volatile u32            Green_high=0;
+ volatile u32            Green_low=0;
+ volatile u32            Blue_high=0;
+ volatile u32            Blue_low=0;
+
+// Value of high low count from software
+  volatile u32			final_red_high = 0;
+  volatile u32  		final_red_low = 0;
+  volatile u32			final_blue_high = 0;
+  volatile u32  		final_blue_low = 0;
+  volatile u32			final_green_high = 0;
+  volatile u32  	    final_green_low = 0;
+
+ //temporary high,low counts
+ volatile u32            temp_red_high = 0;
+ volatile u32            temp_red_low = 0;
+ volatile u32            temp_green_high = 0;
+ volatile u32            temp_green_low = 0;
+ volatile u32            temp_blue_high = 0;
+ volatile u32            temp_blue_low = 0;
+
+   //high,low count signals
+   volatile u32            red_high_count=0;
+   volatile u32            red_low_count=0;
+   volatile u32            green_high_count=0;
+   volatile u32            green_low_count=0;
+   volatile u32            blue_high_count=0;
+   volatile u32            blue_low_count=0;
+/**************************** INTERRUPT HANDLERS ******************************/
+
+/****************************************************************************/
+/**
+* Fixed interval timer interrupt handler
+*
+* Reads the GPIO port which reads back the hardware generated PWM wave for the RGB Leds
+*
+* Software PWM is implemented here
+ *****************************************************************************/
+
+void FIT_Handler(void)
+{
+	// Read the GPIO port to read back the generated PWM signal for RGB led's
+	 gpio_in = XGpio_DiscreteRead(&GPIOInst0, GPIO_0_INPUT_0_CHANNEL);
+	 //xil_printf("GPIO: %d\n",gpio_in);
+
+	 // Detect Red
+
+	 /*	if (((gpio_in >> 2 ) & 0x01) == 1)
+	 	{
+	 		// Check high and low count signals
+
+	 		if(red_high_count == 1 && red_low_count == 1)
+	 		{
+	 			final_red_high = temp_red_high;
+	 			final_red_high = temp_red_low;
+
+	 			temp_red_high = 1;
+	 			temp_red_low = 0;
+
+	 			red_high_count = 0;
+	 			red_low_count = 0;
+
+	 	    }
+
+	 		// Increment high count
+	 		else
+	 		{
+	 			red_high_count = 1;
+	 			temp_red_high = temp_red_high + 1;
+	 		}
+	 	}
+
+	 	else
+	 	{
+	 		// Increment low count
+	 		if(red_high_count == 1)
+	 		{
+	 			red_low_count = 1;
+	 			temp_red_low = temp_red_low + 1;
+	 		}
+
+	 		else
+	 			red_low_count = 0;
+
+
+	 	}*/
+	 // Detect Red
+
+	 	 	 if ((gpio_in & 0x0004) == 0x0004)
+	 	 	{
+	 	 		// Check high and low count signals
+
+	 	 		if(red_high_count == 1 && red_low_count == 1)
+	 	 		{
+	 	 			sw_high_red= Red_high;
+	 	 			sw_low_red= Red_low;
+
+	 	 			Red_high = 1;
+	 	 			Red_low = 0;
+
+	 	 			red_high_count = 0;
+	 	 			red_low_count = 0;
+
+	 	 	    }
+
+	 	 		// Increment high count
+	 	 		else
+	 	 		{
+	 	 			red_high_count = 1;
+	 	 			Red_high= Red_high + 1;
+	 	 		}
+	 	 	}
+
+	 	 	else
+	 	 	{
+	 	 		// Increment low count
+	 	 		if(red_high_count == 1)
+	 	 		{
+	 	 			red_low_count = 1;
+	 	 			Red_low = Red_low + 1;
+	 	 		}
+
+	 	 		else
+	 	 			red_low_count = 0;
+
+
+	 	 	}
+
+	 	// Detect Green
+
+	 	/*if((gpio_in & 0x0001) == 0x0001)
+	 		{
+	 			if(green_high_count == 1 && green_low_count == 1)
+	 			{
+	 				final_green_high = temp_green_high;
+	 				final_green_high = temp_green_low;
+
+	 				temp_green_high = 1;
+	 				temp_green_low = 0;
+
+	 				green_high_count = 0;
+	 				green_low_count = 0;
+
+	 			}
+
+	 			// Increment high count
+	 			else
+	 			{
+	 				green_high_count = 1;
+	 				temp_green_high= temp_green_high + 1;
+	 			}
+	 		}
+
+	 		else
+	 		{
+	 			// Increment low count
+	 			if(green_high_count == 1)
+	 			{
+	 				green_low_count = 1;
+	 				temp_green_low = temp_green_low + 1;
+	 			}
+
+	 			else
+	 				green_low_count = 0;
+
+
+
+	 		}
+
+	 	// Detect Blue
+
+	 	if((gpio_in & 0x0002) == 0x0002)
+	 			{
+	 				if(blue_high_count == 1 && blue_low_count == 1)
+	 				{
+	 					final_blue_high = temp_blue_high;
+	 					final_blue_high = temp_blue_low;
+
+	 					temp_blue_high = 1;
+	 					temp_blue_low = 0;
+
+	 					blue_high_count = 0;
+	 					blue_low_count = 0;
+
+	 				}
+
+	 				// Increment high count
+	 				else
+	 				{
+	 					blue_high_count = 1;
+	 					temp_blue_high = temp_blue_high + 1;
+	 				}
+	 			}
+
+	 			else
+	 			{
+	 				// Increment low count value
+	 				if(blue_high_count == 1)
+	 				{
+	 					blue_low_count = 1;
+	 					temp_blue_low = temp_blue_low + 1;
+	 				}
+
+	 				else
+	 					blue_low_count = 0;
+
+
+
+	 			}*/
+
+
+	 disp=0;
+
+	 	if(count>1)
+	 		{
+	 		disp=1;
+	 		count =0;
+
+
+	 		}
+
+
+	 	count++;
+
+
+}
+
+/****************************************************************************/
+/**
+* initialize the system
+*
+* This function is executed once at start-up and after resets.  It initializes
+* the peripherals and registers the interrupt handler(s)
+*****************************************************************************/
+
+int do_init()
+{
+	int status;
+
+		// initialize the Nexys4 driver and (some of)the devices
+		status = (uint32_t) NX4IO_initialize(NX4IO_BASEADDR);
+		if (status == XST_FAILURE)
+		{
+			xil_printf("Nexsys failed 0");
+			exit(1);
+		}
+
+		// initialize the PMod544IO driver and the PmodENC and PmodCLP
+			status = pmodENC_initialize(&pmodENC_inst, PMODENC_BASEADDR);
+			if (status == XST_FAILURE)
+			{
+				xil_printf("ENC failed 0");
+				exit(1);
+			}
+
+		// initialize the GPIO instances
+			status = XGpio_Initialize(&GPIOInst0, GPIO_0_DEVICE_ID);
+			status = XGpio_Initialize(&GPIOInst1, GPIO_1_DEVICE_ID);
+			status = XGpio_Initialize(&GPIOInst2, GPIO_2_DEVICE_ID);
+			status = XGpio_Initialize(&GPIOInst3, GPIO_3_DEVICE_ID);
+			if (status != XST_SUCCESS)
+			{
+				xil_printf("GPIO failed 0");
+				return XST_FAILURE;
+			}
+
+		// Initialize the AXI Timer
+			status = AXI_Timer_initialize();
+			if (status != XST_SUCCESS)
+			{
+				xil_printf("TIMER failed 0");
+				return XST_FAILURE;
+			}
+
+		// set all of the display digits to blanks and turn off
+		// the decimal points using the "raw" set functions.
+		// These registers are formatted according to the spec
+		// and should remain unchanged when written to Nexys4IO...
+		// something else to check w/ the debugger when we bring the
+		// drivers up for the first time
+			NX4IO_SSEG_setSSEG_DATA(SSEGHI, 0x0058E30E);
+			NX4IO_SSEG_setSSEG_DATA(SSEGLO, 0x00144116);
+
+		// Initialize the OLED display
+			OLEDrgb_begin(&pmodOLEDrgb_inst, RGBDSPLY_GPIO_BASEADDR, RGBDSPLY_SPI_BASEADDR);
+
+		// GPIO0 channel 1 is an 8-bit input port.
+		// GPIO0 channel 2 is an 8-bit output port.
+			XGpio_SetDataDirection(&GPIOInst0, GPIO_0_INPUT_0_CHANNEL, 0xFF);
+			XGpio_SetDataDirection(&GPIOInst0, GPIO_0_OUTPUT_0_CHANNEL, 0x00);
+
+		// GPIO1 channel 1 is an 8-bit input port.
+		// GPIO1 channel 2 is an 8-bit input port.
+			XGpio_SetDataDirection(&GPIOInst1, GPIO_1_INPUT_0_CHANNEL, 0xFF);
+			XGpio_SetDataDirection(&GPIOInst1, GPIO_1_INPUT_1_CHANNEL, 0xFF);
+
+		// GPIO2 channel 1 is an 8-bit input port.
+		// GPIO2 channel 2 is an 8-bit input port.
+			XGpio_SetDataDirection(&GPIOInst2, GPIO_2_INPUT_0_CHANNEL, 0xFF);
+			XGpio_SetDataDirection(&GPIOInst2, GPIO_2_INPUT_1_CHANNEL, 0xFF);
+
+		// GPIO3 channel 1 is an 8-bit input port.
+		// GPIO3 channel 2 is an 8-bit input port.
+			XGpio_SetDataDirection(&GPIOInst3, GPIO_3_INPUT_0_CHANNEL, 0xFF);
+			XGpio_SetDataDirection(&GPIOInst3, GPIO_3_INPUT_1_CHANNEL, 0xFF);
+
+		// initialize the interrupt controller
+			status = XIntc_Initialize(&IntrptCtlrInst, INTC_DEVICE_ID);
+			if (status != XST_SUCCESS)
+			{
+				xil_printf("Interuppt failed 0");
+				return XST_FAILURE;
+			}
+
+		// connect the fixed interval timer (FIT) handler to the interrupt
+			status = XIntc_Connect(&IntrptCtlrInst, FIT_INTERRUPT_ID,(XInterruptHandler)FIT_Handler,(void *)0);
+			if (status != XST_SUCCESS)
+			{
+				xil_printf("FIT failed 0");
+				return XST_FAILURE;
+
+			}
+
+		// start the interrupt controller such that interrupts are enabled for
+		// all devices that cause interrupts.
+			status = XIntc_Start(&IntrptCtlrInst, XIN_REAL_MODE);
+			if (status != XST_SUCCESS)
+			{
+				xil_printf("CONTROLLER failed 0");
+				return XST_FAILURE;
+			}
+
+		// enable the FIT interrupt
+			XIntc_Enable(&IntrptCtlrInst, FIT_INTERRUPT_ID);
+			return XST_SUCCESS;
+}
+
+/****************************************************************************
+*
+* AXI timer initializes it to generate out a 4Khz signal, Which is given to the Nexys4IO module as clock input.
+* DO NOT MODIFY
+*
+*****************************************************************************/
+int AXI_Timer_initialize(void){
+
+	uint32_t status;				// status from Xilinx Lib calls
+	u32		ctlsts;		// control/status register or mask
+
+	status = XTmrCtr_Initialize(&AXITimerInst,AXI_TIMER_DEVICE_ID);
+		if (status != XST_SUCCESS) {
+			return XST_FAILURE;
+		}
+	status = XTmrCtr_SelfTest(&AXITimerInst, TmrCtrNumber);
+		if (status != XST_SUCCESS) {
+			return XST_FAILURE;
+		}
+	ctlsts = XTC_CSR_AUTO_RELOAD_MASK | XTC_CSR_EXT_GENERATE_MASK | XTC_CSR_LOAD_MASK |XTC_CSR_DOWN_COUNT_MASK ;
+	XTmrCtr_SetControlStatusReg(AXI_TIMER_BASEADDR, TmrCtrNumber,ctlsts);
+
+	//Set the value that is loaded into the timer counter and cause it to be loaded into the timer counter
+	XTmrCtr_SetLoadReg(AXI_TIMER_BASEADDR, TmrCtrNumber, 24998);
+	XTmrCtr_LoadTimerCounterReg(AXI_TIMER_BASEADDR, TmrCtrNumber);
+	ctlsts = XTmrCtr_GetControlStatusReg(AXI_TIMER_BASEADDR, TmrCtrNumber);
+	ctlsts &= (~XTC_CSR_LOAD_MASK);
+	XTmrCtr_SetControlStatusReg(AXI_TIMER_BASEADDR, TmrCtrNumber, ctlsts);
+
+	ctlsts = XTmrCtr_GetControlStatusReg(AXI_TIMER_BASEADDR, TmrCtrNumber);
+	ctlsts |= XTC_CSR_ENABLE_TMR_MASK;
+	XTmrCtr_SetControlStatusReg(AXI_TIMER_BASEADDR, TmrCtrNumber, ctlsts);
+
+	XTmrCtr_Enable(AXI_TIMER_BASEADDR, TmrCtrNumber);
+	return XST_SUCCESS;
+
+}
